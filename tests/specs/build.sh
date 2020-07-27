@@ -16,6 +16,10 @@ stringtext()
     [ -z "$meta" ] && meta="Provides: foo"
     rpmbuild -bb \
         -D "%outfile dir" \
+        -D '%_docdir /usr/share/doc/packages/foo2' \
+        -D '%docdir /usr/share/doc/packages/foo' \
+        -D '%_defaultdocdir /usr/share/doc/packages' \
+        -D '%clamp_mtime_to_source_date_epoch Y' \
         -D "%outcmd rm -rf dir ; mkdir -p dir ; echo $string > 'dir/$outfile'" \
         -D "%metadata $meta" \
         stringtext.spec || exit 15
@@ -27,7 +31,13 @@ stringtext2()
     n=$1
     string=$2
     string2=$3
-    rpmbuild -bb -D '%outfile dir' -D "%outcmd rm -rf dir ; mkdir -p dir ; echo -e '$string' > dir/string.txt ; echo -e '$string2' > dir/string2.txt" stringtext.spec
+    rpmbuild -bb \
+        -D '%outfile dir' \
+        -D '%_docdir /usr/share/doc/packages/foo2' \
+        -D '%docdir /usr/share/doc/packages/foo' \
+        -D '%_defaultdocdir /usr/share/doc/packages' \
+        -D '%clamp_mtime_to_source_date_epoch Y' \
+        -D "%outcmd rm -rf dir ; mkdir -p dir ; echo -e '$string' > dir/string.txt ; echo -e '$string2' > dir/string2.txt" stringtext.spec
     mv ~/rpmbuild/RPMS/x86_64/stringtext-1-0.x86_64.rpm $r/stringtext-1-$n.x86_64.rpm
 }
 

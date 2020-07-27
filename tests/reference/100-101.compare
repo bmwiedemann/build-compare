@@ -1,0 +1,28 @@
+Comparing stringtext-1-100.x86_64.rpm to stringtext-1-101.x86_64.rpm
+comparing the rpm tags of stringtext
+--- old-rpm-tags
++++ new-rpm-tags
+@@ -80,7 +80,7 @@
+ ___QF_CHECKSUM___
+ /usr/share/doc/packages/stringtext  0
+ /usr/share/doc/packages/stringtext/dir  0
+-/usr/share/doc/packages/stringtext/dir/foo bar e150a1ec81e8e93e1eae2c3a77e66ec6dbd6a3b460f89c1d08aecf422ee401a0 2
++/usr/share/doc/packages/stringtext/dir/foo bar f280059f1d75b63515d45f34eec2ac637c2b5e57ea319b6247dc0e84eda38e0d 2
+ 
+ 
+ ___QF_CHECKSUM___
+comparing rpmtags
+comparing RELEASE
+comparing PROVIDES
+comparing scripts
+comparing filelist
+comparing file checksum
+creating rename script
+RPM file checksum differs.
+Extracting packages
+/usr/share/doc/packages/stringtext/dir/foo bar differs (ASCII text)
+--- "old//usr/share/doc/packages/stringtext/dir/foo bar"	2018-07-19 13:33:20.000000000 +0200
++++ "new//usr/share/doc/packages/stringtext/dir/foo bar"	2018-07-19 13:33:20.000000000 +0200
+@@ -1 +1 @@
+-123456
++X98765

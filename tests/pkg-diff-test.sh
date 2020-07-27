@@ -53,3 +53,14 @@ it_reports_differing_rpm_tags()
     ! $p -a rpms/stringtext-1-{1,3}.*.rpm || return 1
     $p -a rpms/stringtext-1-{1,3}.*.rpm | grep '^+bar 0'
 }
+
+it_produces_reproducible_diffs_2_12()
+{
+    #$p -a rpms/stringtext-1-{2,12}.*.rpm > reference/2-12.compare
+    $p -a rpms/stringtext-1-{2,12}.*.rpm | diff -u10 reference/2-12.compare -
+}
+it_produces_reproducible_diffs_100_101()
+{
+    #$p -a rpms/stringtext-1-10{0,1}.*.rpm > reference/100-101.compare
+    $p -a rpms/stringtext-1-10{0,1}.*.rpm | diff -u10 reference/100-101.compare -
+}

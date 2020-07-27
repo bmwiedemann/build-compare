@@ -1,0 +1,58 @@
+Comparing stringtext-1-2.x86_64.rpm to stringtext-1-12.x86_64.rpm
+comparing the rpm tags of stringtext
+--- old-rpm-tags
++++ new-rpm-tags
+@@ -32,7 +32,6 @@
+ OLDSUGGESTS
+ 
+ PROVIDE
+-foo 0 
+ stringtext 8 @VERSION@-@RELEASE_LONG@
+ stringtext(x86-64) 8 @VERSION@-@RELEASE_LONG@
+ 
+@@ -73,6 +72,7 @@
+ /usr/share/doc/packages/stringtext 0 (none) 40755 root root 0 0 
+ /usr/share/doc/packages/stringtext/dir 0 (none) 40755 root root 0 4294967295 
+ /usr/share/doc/packages/stringtext/dir/string.txt 2 (none) 100644 root root 0 4294967295 
++/usr/share/doc/packages/stringtext/dir/string2.txt 2 (none) 100644 root root 0 4294967295 
+ 
+ 
+ ___QF_FILELIST___
+@@ -81,6 +81,7 @@
+ /usr/share/doc/packages/stringtext  0
+ /usr/share/doc/packages/stringtext/dir  0
+ /usr/share/doc/packages/stringtext/dir/string.txt f280059f1d75b63515d45f34eec2ac637c2b5e57ea319b6247dc0e84eda38e0d 2
++/usr/share/doc/packages/stringtext/dir/string2.txt 181210f8f9c779c26da1d9b2075bde0127302ee0e3fca38c9a83f5b1dd8e5d3b 2
+ 
+ 
+ ___QF_CHECKSUM___
+comparing rpmtags
+comparing RELEASE
+comparing PROVIDES
+--- old-PROVIDES
++++ new-PROVIDES
+@@ -8,7 +8,6 @@
+ 
+ 
+ CONFLICT
+-foo 0 
+ OBSOLETE
+ OLDSUGGESTS
+ PROVIDE
+comparing scripts
+comparing filelist
+--- old-filelist
++++ new-filelist
+@@ -1,5 +1,6 @@
+ /usr/share/doc/packages/stringtext 0 (none) 40755 root root 0 0 
+ /usr/share/doc/packages/stringtext/dir 0 (none) 40755 root root 0 4294967295 
+ /usr/share/doc/packages/stringtext/dir/string.txt 2 (none) 100644 root root 0 4294967295 
++/usr/share/doc/packages/stringtext/dir/string2.txt 2 (none) 100644 root root 0 4294967295 
+ 
+ 
+comparing file checksum
+creating rename script
+RPM meta information is different
+Extracting packages
+Missing in old package: /usr/share/doc/packages/stringtext/dir/string2.txt
+/usr/share/doc/packages/stringtext/dir/string2.txt differs (cannot open `old//usr/share/doc/packages/stringtext/dir/string2.txt' (No such file or directory))
