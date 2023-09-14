@@ -315,6 +315,13 @@ function trim_section() {
   fi
 }
 
+function slowrollfilter ()
+{
+    sed -i 's/Slowroll/Tumbleweed/;
+        s!openSUSE:ALP:Experimental:Slowroll:Staging!openSUSE:Factory!
+        s!openSUSE:ALP:Experimental:Slowroll!openSUSE:Factory!
+       ' $1
+}
 # Compare just the rpm meta data of two rpms
 # Returns:
 # 0 in case of same content
@@ -363,6 +370,8 @@ function cmp_rpm_meta ()
     # are the same.
     trim_release_old < $rpm_meta_old > $file1
     trim_release_new < $rpm_meta_new > $file2
+    slowrollfilter $file1
+    slowrollfilter $file2
     echo "comparing the rpm tags of $name_new"
     if diff --speed-large-files --label old-rpm-tags --label new-rpm-tags -au0 $file1 $file2; then
       rm -rf "$tmpdir"
@@ -371,6 +380,8 @@ function cmp_rpm_meta ()
 
     get_value QF_TAGS $rpm_meta_old > $file1
     get_value QF_TAGS $rpm_meta_new > $file2
+    slowrollfilter $file1
+    slowrollfilter $file2
     if ! comp_file rpmtags $file1 $file2 $rpm_meta_old $rpm_meta_new; then
       rm -rf "$tmpdir"
       return 1
