@@ -78,7 +78,7 @@ QF_TAGS="${QF_TAGS}%{PAYLOADFORMAT} %{PAYLOADCOMPRESSOR} %{PAYLOADFLAGS}\\n"
 # of SIGGPG (and perhaps the other SIG*)
 # XXX We don't look at triggers
 # Only the first ChangeLog entry; should be enough
-QF_TAGS="${QF_TAGS}%{CHANGELOGTIME} %{CHANGELOGNAME} %{CHANGELOGTEXT}\\n"
+#QF_TAGS="${QF_TAGS}%{CHANGELOGTIME} %{CHANGELOGNAME} %{CHANGELOGTEXT}\\n"
 
 # scripts, might contain release number
 QF_SCRIPT=
