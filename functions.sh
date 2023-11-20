@@ -320,6 +320,8 @@ function slowrollfilter ()
     sed -i 's/Slowroll/Tumbleweed/;
         s!openSUSE:ALP:Experimental:Slowroll:Staging!openSUSE:Factory!
         s!openSUSE:ALP:Experimental:Slowroll!openSUSE:Factory!
+        s!openSUSE:Slowroll:Staging!openSUSE:Factory!
+        s!openSUSE:Slowroll!openSUSE:Factory!
         s!/openSUSE:Factory/standard/[0-9a-f]*-!/openSUSE:Factory/standard/md5xxx-!
        ' $1
 }
